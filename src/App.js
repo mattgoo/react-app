@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import styles from './App.css';
 
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+
 function App() {
   return (
     <Container>
