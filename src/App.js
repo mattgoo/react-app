@@ -1,11 +1,11 @@
 import logo from './logo.svg';
-import styles from './App.css';
+import './App.css';
 
 import Grid from '@mui/material/Grid';
 
 function App() {
   return (
-    <div className={styles.App}>
+    <div className='App'>
       <Grid className='grid-container' container spacing={12}>
         <Grid item xs={4}>
           <h1>Info</h1>
