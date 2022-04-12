@@ -21,11 +21,13 @@ function App() {
             backgroundImage: `url(${infoImg})`,
           }}>
             <h1 className='big-Text'>Info</h1>
+            <p className='small-Text'>(In Progress)</p>
           </Grid>
           <Grid className='grid-inner' item xs={4} sx={{
             backgroundImage: `url(${galleryImg})`,
           }}>
             <h1 className='big-Text'>Gallery</h1>
+            <p className='small-Text'>(In Progress)</p>
           </Grid>
           <Grid className='grid-inner' onClick={goToMyGithub} item xs={4} sx={{
             backgroundImage: `url(${projectsImg})`,
