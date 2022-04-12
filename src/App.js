@@ -1,25 +1,23 @@
 import logo from './logo.svg';
 import styles from './App.css';
 
-import { Container } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
+import Grid from '@mui/material/Grid';
 
 function App() {
   return (
-    <Container>
-      <Row>
-        <Col>
+    <div className={styles.App}>
+      <Grid container spacing={12}>
+        <Grid item xs={4}>
           <h1>Info</h1>
-        </Col>
-        <Col>
+        </Grid>
+        <Grid item xs={4}>
           <h1>Gallery</h1>
-        </Col>
-        <Col>
+        </Grid>
+        <Grid item xs={4}>
           <h1>Projects</h1>
-        </Col>
-      </Row>
-    </Container>
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 
