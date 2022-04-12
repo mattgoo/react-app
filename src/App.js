@@ -6,6 +6,8 @@ import React from 'react';
 
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 
 function App() {
   const [InfoTitle, setInfoTitle] = React.useState('Info');
@@ -39,29 +41,33 @@ function App() {
   
 
   return (
-    <div>
-      <div className='App'>
-        <Grid className='grid-container' container spacing={12}>
-          <Grid className='grid-inner' 
-                item xs={4} 
-                sx={{ backgroundImage: `url(${infoImg})`}} 
-                onMouseEnter={changeInfo}
-                onMouseLeave={changeInfo}>
-            <h2 className='big-Text'>{InfoTitle}</h2>
+    <div className='App'>
+      <Box sx={{width: '100%'}}>
+        <Stack spacing={2}>
+          <Grid className='grid-container' container spacing={12}>
+            <Grid className='grid-inner' 
+                  item xs={4} 
+                  sx={{ backgroundImage: `url(${infoImg})`}} 
+                  onMouseEnter={changeInfo}
+                  onMouseLeave={changeInfo}>
+              <h2 className='big-Text'>{InfoTitle}</h2>
+            </Grid>
+            <Grid className='grid-inner' 
+                  item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}
+                  onMouseEnter={changeGallery}
+                  onMouseLeave={changeGallery}>
+              <h2 className='big-Text'>{GalleryTitle}</h2>
+            </Grid>
+            <Grid className='grid-inner' onClick={goToMyGithub} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
+              <h1 className='big-Text'>Projects</h1>
+            </Grid>
           </Grid>
-          <Grid className='grid-inner' 
-                item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}
-                onMouseEnter={changeGallery}
-                onMouseLeave={changeGallery}>
-            <h2 className='big-Text'>{GalleryTitle}</h2>
-          </Grid>
-          <Grid className='grid-inner' onClick={goToMyGithub} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
-            <h1 className='big-Text'>Projects</h1>
-          </Grid>
-        </Grid>
-      </div>
+          <div className='centered'>
+            <h1>Matt Goodwin</h1>
+          </div>
+        </Stack>
+      </Box>
     </div>
-
   );
 }
 
