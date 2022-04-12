@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 function App() {
   return (
     <div className={styles.App}>
-      <Grid container spacing={12}>
+      <Grid className='grid-container' container spacing={12}>
         <Grid item xs={4}>
           <h1>Info</h1>
         </Grid>
