@@ -62,11 +62,17 @@
   justify-content: center;
 }
 
-.grid-inner > h1 {
+.big-Text {
   font-size: 2.5rem;
   font-weight: bold;
   color: #fff;
   text-shadow: 0 0 10px #000;
+}
+
+/* on hover scale up and turn blue */
+.big-Text:hover {
+  transform: scale(1.1);
+  color: #61dafb;
 }
 
 
