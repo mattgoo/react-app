@@ -12,9 +12,8 @@ import Box from '@mui/material/Box';
 function App() {
   const [InfoTitle, setInfoTitle] = React.useState('Info');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
-  const [ProjectsTitle, setProjectsTitle] = React.useState('Projects');
 
-  // function to change the title of the page to in progress on hover
+
   function changeInfo() {
     if (InfoTitle === 'Info') {
       setInfoTitle('In Progress');
