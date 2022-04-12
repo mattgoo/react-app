@@ -60,6 +60,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('./images/infograph.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.grid-inner:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.grid-inner:hover > h1 {
+  transform: scale(1.1);
+  color: #61dafb;
 }
 
 .big-Text {
@@ -69,11 +84,5 @@
   text-shadow: 0 0 10px #000;
 }
 
-/* on hover scale up and turn blue */
-.big-Text:hover {
-  transform: scale(1.1);
-  color: #61dafb;
-  cursor: pointer;
-}
 
 
