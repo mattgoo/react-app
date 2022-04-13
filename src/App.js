@@ -9,6 +9,13 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
+
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+// set page header
+document.title = 'Matt Goodwin';
+
 function App() {
   const [InfoTitle, setInfoTitle] = React.useState('Info');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
@@ -33,8 +40,10 @@ function App() {
   }
 
 
+
   const goToMyGithub = () => {
     window.open('https://github.com/mattgoo');
+    window.open('https://github.com/mngoodwin');
   };
 
   
