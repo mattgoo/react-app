@@ -19,9 +19,12 @@ import {
 // gallery images
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { minWidth } from '@mui/system';
 
 
+// back button 
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 
 // set page header
@@ -153,6 +156,11 @@ function goToGallery() {
   window.location.href = '/gallery';
 }
 
+// go to Home page function
+function goToHome() {
+  window.location.href = '/';
+}
+
 
 
 function Home() {
@@ -216,7 +224,11 @@ function srcset(image, size, rows = 1, cols = 1) {
 function Gallery() {
   return (
     <Stack className='App'>
+      <IconButton onClick={goToHome}>
+        <ArrowCircleUpIcon className='white-arrow' />
+      </IconButton>
       <h1 className='gallery-Text'>Gallery!</h1>
+      <h6 className='small-Text'>(Work in Progress: will load eventually)</h6>
       <ImageList
         className='image-list'
         variant="quilted"
@@ -224,7 +236,7 @@ function Gallery() {
         rowHeight={121}
       >
         {itemData.map((item) => (
-          <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+          <ImageListItem className='enlarge-pic' key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
             <img
               {...srcset(item.img, 121, item.rows, item.cols)}
               alt={item.title}
