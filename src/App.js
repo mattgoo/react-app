@@ -21,68 +21,109 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { minWidth } from '@mui/system';
 
+
+
+
 // set page header
 document.title = 'Matt Goodwin';
 
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
+    img: require('./images/gallery/CourierPoster.png'),
+    title: 'Courier Poster',
+    rows: 5,
+    cols: 2,
+  },
+  {
+    img: require('./images/gallery/IMG_0091.PNG'),
+    title: 'img_0091',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0101.PNG'),
+    title: 'img_0101',
+    rows: 1.5,
+    cols: 1,
+  },  
+  {
+    img: require('./images/gallery/IMG_0098.PNG'),
+    title: 'img_0098',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0100.PNG'),  
+    title: 'img_0100',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0108.PNG'),
+    title: 'img_0108',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0111.PNG'),
+    title: 'img_0111',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0161.PNG'),
+    title: 'img_0161',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/Cover1.png'),
+    title: 'Cover1',
+    rows: 2.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0167.PNG'),
+    title: 'img_0167',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0169.PNG'),
+    title: 'img_0169',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0170.PNG'),
+    title: 'img_0170',
+    rows: 1.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0171.PNG'),
+    title: 'img_0171',
+    rows: 2.5,
+    cols: 1,
+  },
+  {
+    img: require('./images/gallery/IMG_0173.PNG'),
+    title: 'img_0173',
+    rows: 1,
+    cols: 4,
+  },
+  {
+    img: require('./images/gallery/IMG_0174.PNG'),
+    title: 'img_0174',
+    rows: 5,
+    cols: 4,
+  },
+  {
+    img: require('./images/gallery/IMG_0175.PNG'),
+    title: 'img_0175',
     rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    cols: 2,
+    cols: 1,
   },
 ];
 
@@ -128,7 +169,7 @@ function Home() {
       <Box sx={{width: '100%'}}>
         <Stack spacing={2}>
           <Grid className='grid-container' container spacing={12}>
-            <Grid className='grid-inner' onClick={goToAbout} item xs={4} sx={{ backgroundImage: `url(${infoImg})`, minWidth: '33%'}}>
+            <Grid className='grid-inner' onClick={goToAbout} item xs={4} sx={{ backgroundImage: `url(${infoImg})`}}>
               <h1 className='big-Text'>{AboutTitle}</h1>
             </Grid>
             <Grid className='grid-inner' onClick={goToGallery} item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}>
@@ -174,7 +215,8 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 function Gallery() {
   return (
-    <div className='App' sx>
+    <Stack className='App'>
+      <h1 className='gallery-Text'>Gallery!</h1>
       <ImageList
         className='image-list'
         variant="quilted"
@@ -191,7 +233,7 @@ function Gallery() {
           </ImageListItem>
         ))}
       </ImageList>
-    </div>
+    </Stack>
   );
 }
 

@@ -41,7 +41,6 @@
 
 .big-Text {
   font-size: calc(10px + 4vmin);
-  font-weight: bold;
   color: #fff;
   text-shadow: 0 0 10px #000;
   margin: 10px;
@@ -81,6 +80,19 @@
   width: 50%;
   height: 100%;
 }
+
+
+.gallery-Text {
+  display: flex;
+  flex: 1;
+  font-size: calc(10px + 4vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 
