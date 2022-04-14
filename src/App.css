@@ -28,18 +28,15 @@
 }
 
 
+
 .grid-inner:hover {
   filter: grayscale(0%);
   cursor: pointer;
 }
 
 .grid-inner:hover > h1 {
-  transform: scale(1.1);
+  scale: 1.1;
   color: #61dafb;
-}
-
-.grid-inner:hover > h2 {
-  color: #fb6161;
 }
 
 .big-Text {
@@ -47,7 +44,12 @@
   font-weight: bold;
   color: #fff;
   text-shadow: 0 0 10px #000;
-  margin-right: auto;
+  margin: 10px;
+}
+
+.big-Text:hover {
+  color: #61dafb;
+  scale: 1.1;
 }
 
 .small-Text {

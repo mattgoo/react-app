@@ -4,49 +4,60 @@ import galleryImg from './images/galleryImg.png';
 import projectsImg from './images/projectsImg.png';
 import React from 'react';
 
-import Link from '@mui/material/Link';
+//for Home page
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
-
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+// for routing to other pages
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Routes
+} from "react-router-dom";
 
 // set page header
 document.title = 'Matt Goodwin';
 
+
+
 function App() {
-  const [InfoTitle, setInfoTitle] = React.useState('Info');
+ 
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="gallery" element={<Gallery />} />
+      </Routes>
+    </Router>
+  );
+}
+
+
+// go to About page function 
+function goToAbout() {
+  window.location.href = '/about';
+}
+
+// got to Gallery page function
+function goToGallery() {
+  window.location.href = '/gallery';
+}
+
+
+
+function Home() {
+  const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
-
-
-  function changeInfo() {
-    if (InfoTitle === 'Info') {
-      setInfoTitle('In Progress');
-    }
-    else {
-      setInfoTitle('Info');
-    }
-  } 
-
-  function changeGallery() {
-    if (GalleryTitle === 'Gallery') {
-      setGalleryTitle('In Progress');
-    }
-    else {
-      setGalleryTitle('Gallery');
-    }
-  }
-
-
 
   const goToMyGithub = () => {
     window.open('https://github.com/mattgoo');
     window.open('https://github.com/mngoodwin');
   };
-
-  
 
   return (
     <div className='App'>
@@ -55,18 +66,14 @@ function App() {
           <Grid className='grid-container' container spacing={12}>
             <Grid className='grid-inner' 
                   item xs={4} 
-                  sx={{ backgroundImage: `url(${infoImg})`}} 
-                  onMouseEnter={changeInfo}
-                  onMouseLeave={changeInfo}>
-              <h2 className='big-Text'>{InfoTitle}</h2>
+                  sx={{ backgroundImage: `url(${infoImg})`}}>
+              <h1 className='big-Text'>{AboutTitle}</h1>
             </Grid>
             <Grid className='grid-inner' 
-                  item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}
-                  onMouseEnter={changeGallery}
-                  onMouseLeave={changeGallery}>
-              <h2 className='big-Text'>{GalleryTitle}</h2>
+                  item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}>
+              <h1 className='big-Text'>{GalleryTitle}</h1>
             </Grid>
-            <Grid className='grid-inner' onClick={goToMyGithub} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
+            <Grid className='grid-inner' onClick={goToAbout} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
               <h1 className='big-Text'>Projects</h1>
             </Grid>
           </Grid>
@@ -75,6 +82,22 @@ function App() {
           </div>
         </Stack>
       </Box>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div className='App'>
+      <h1 className='big-Text'>About</h1>
+    </div>
+  );
+}
+
+function Gallery() {
+  return (
+    <div className='App'>
+      <h1 className='big-Text'>Gallery</h1>
     </div>
   );
 }
