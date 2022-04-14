@@ -161,15 +161,25 @@ function goToHome() {
 }
 
 
+// popup alert function asking user if they want to leave the page
+function leavePage() {
+  if (window.confirm("Open Matt's school and personl Github?")) {
+    goToMyGithub();
+  }
+}
+
+function goToMyGithub () {
+  window.open('https://github.com/mattgoo');
+  window.open('https://github.com/mngoodwin');
+};
+
+
 
 function Home() {
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
 
-  const goToMyGithub = () => {
-    window.open('https://github.com/mattgoo');
-    window.open('https://github.com/mngoodwin');
-  };
+
 
   return (
     <div className='App'>
@@ -182,7 +192,7 @@ function Home() {
             <Grid className='grid-inner' onClick={goToGallery} item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}>
               <h1 className='big-Text'>{GalleryTitle}</h1>
             </Grid>
-            <Grid className='grid-inner' onClick={goToMyGithub} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
+            <Grid className='grid-inner' onClick={leavePage} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
               <h1 className='big-Text'>Projects</h1>
             </Grid>
           </Grid>
@@ -201,7 +211,7 @@ function About() {
       <IconButton onClick={goToHome}>
         <ArrowCircleUpIcon className='white-arrow' />
       </IconButton>
-
+      <h1 className='normal-Text'>Work In Progress</h1>
     </Stack>
   );
 }
@@ -223,7 +233,7 @@ function Gallery() {
       <IconButton onClick={goToHome}>
         <ArrowCircleUpIcon className='white-arrow' />
       </IconButton>
-      <h1 className='gallery-Text'>Gallery!</h1>
+      <h1 className='normal-Text'>Gallery!</h1>
       <h6 className='small-Text'>(Work in Progress: will load eventually)</h6>
       <ImageList
         className='image-list'

@@ -85,7 +85,7 @@
 }
 
 
-.gallery-Text {
+.normal-Text {
   display: flex;
   flex: 1;
   font-size: calc(10px + 4vmin);
