@@ -198,19 +198,14 @@ function Home() {
 
 function About() {
   return (
-    <div className='App'>
-      <h1 className='big-Text'>About</h1>
-    </div>
+    <Stack spacing={2} className='App'>
+      <IconButton onClick={goToHome}>
+        <ArrowCircleUpIcon className='white-arrow' />
+      </IconButton>
+    </Stack>
   );
 }
 
-function AGallery() {
-  return (
-    <div className='App'>
-      <h1 className='big-Text'>Gallery</h1>
-    </div>
-  );
-}
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {

@@ -114,6 +114,7 @@
 .white-arrow:hover {
   scale: 1.1;
   color: #61dafb;
+  max-width: 90%;
 }
 
 
