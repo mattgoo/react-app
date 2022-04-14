@@ -64,16 +64,13 @@ function Home() {
       <Box sx={{width: '100%'}}>
         <Stack spacing={2}>
           <Grid className='grid-container' container spacing={12}>
-            <Grid className='grid-inner' 
-                  item xs={4} 
-                  sx={{ backgroundImage: `url(${infoImg})`}}>
+            <Grid className='grid-inner' onClick={goToAbout} item xs={4} sx={{ backgroundImage: `url(${infoImg})`}}>
               <h1 className='big-Text'>{AboutTitle}</h1>
             </Grid>
-            <Grid className='grid-inner' 
-                  item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}>
+            <Grid className='grid-inner' onClick={goToGallery} item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}>
               <h1 className='big-Text'>{GalleryTitle}</h1>
             </Grid>
-            <Grid className='grid-inner' onClick={goToAbout} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
+            <Grid className='grid-inner' onClick={goToMyGithub} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
               <h1 className='big-Text'>Projects</h1>
             </Grid>
           </Grid>
