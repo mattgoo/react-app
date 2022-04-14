@@ -23,7 +23,6 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 // back button 
 import IconButton from '@mui/material/IconButton';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 
@@ -202,6 +201,7 @@ function About() {
       <IconButton onClick={goToHome}>
         <ArrowCircleUpIcon className='white-arrow' />
       </IconButton>
+
     </Stack>
   );
 }
@@ -215,6 +215,7 @@ function srcset(image, size, rows = 1, cols = 1) {
     }&fit=crop&auto=format&dpr=2 2x`,
   };
 }
+
 
 function Gallery() {
   return (
