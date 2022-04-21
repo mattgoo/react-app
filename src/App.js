@@ -23,11 +23,17 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 // back button 
 import IconButton from '@mui/material/IconButton';
-import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import HomeIcon from '@mui/icons-material/Home';
+
+
+// for my age
+import dayjs from 'dayjs';
 
 
 // set page header
 document.title = 'Matt Goodwin';
+
+
 
 
 const itemData = [
@@ -168,6 +174,7 @@ function leavePage() {
   }
 }
 
+
 function goToMyGithub () {
   window.open('https://github.com/mattgoo');
   window.open('https://github.com/mngoodwin');
@@ -178,13 +185,19 @@ function goToMyGithub () {
 function Home() {
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
+  const [age, setAge] = React.useState(0);
 
+  React.useEffect(() => {
+    setInterval(() => {
+      setAge(((dayjs().diff(dayjs('2000-01-01'), 'seconds')) / (60 * 60 * 24 * 365.25)).toFixed(9));
+    }, 1000);
+  }, []);
 
 
   return (
     <div className='App'>
       <Box sx={{width: '100%'}}>
-        <Stack spacing={2}>
+        <Stack spacing={2} sx={{height:'100%'}}>
           <Grid className='grid-container' container spacing={12}>
             <Grid className='grid-inner' onClick={goToAbout} item xs={4} sx={{ backgroundImage: `url(${infoImg})`}}>
               <h1 className='big-Text'>{AboutTitle}</h1>
@@ -197,7 +210,7 @@ function Home() {
             </Grid>
           </Grid>
           <div className='centered'>
-            <h1>Matt Goodwin</h1>
+            <h1>Hi, my name is Matt Goodwin and I am currently <span className='loud'>{age}</span> years old.</h1>
           </div>
         </Stack>
       </Box>
@@ -209,7 +222,7 @@ function About() {
   return (
     <Stack spacing={2} className='App'>
       <IconButton onClick={goToHome}>
-        <ArrowCircleUpIcon className='white-arrow' />
+        <HomeIcon className='white-home'/>
       </IconButton>
       <h1 className='normal-Text'>Work In Progress</h1>
     </Stack>
@@ -231,7 +244,7 @@ function Gallery() {
   return (
     <Stack className='App'>
       <IconButton onClick={goToHome}>
-        <ArrowCircleUpIcon className='white-arrow' />
+        <HomeIcon className='white-home'/>
       </IconButton>
       <h1 className='normal-Text'>Gallery!</h1>
       <h6 className='small-Text'>(Work in Progress: will load eventually)</h6>
@@ -254,7 +267,5 @@ function Gallery() {
     </Stack>
   );
 }
-
-
 
 export default App;
