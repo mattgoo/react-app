@@ -197,7 +197,7 @@ function Home() {
   return (
     <div className='App'>
       <Box sx={{width: '100%'}}>
-        <Stack spacing={0} sx={{height:'100%'}}>
+        <Stack spacing={2} sx={{height:'100%'}}>
           <Grid className='grid-container' container spacing={12}>
             <Grid className='grid-inner' onClick={goToAbout} item xs={4} sx={{ backgroundImage: `url(${infoImg})`}}>
               <h1 className='big-Text'>{AboutTitle}</h1>
@@ -224,7 +224,9 @@ function About() {
       <IconButton onClick={goToHome}>
         <HomeIcon className='white-home'/>
       </IconButton>
-      <h1 className='aboutText'>About Me</h1>
+      <h1 className='aboutText'>
+        About Me
+      </h1>
       
     </Stack>
   );
