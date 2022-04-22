@@ -14,7 +14,7 @@
 
 .grid-container {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .grid-inner {
@@ -122,6 +122,21 @@
   scale: 1.1;
   color: #61dafb;
   max-width: 90%;
+}
+
+
+.stack-container {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex: 1;
+  padding-left: 10px;
+}
+
+.aboutText {
+  font-size: calc(10px + 4vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
 }
 
 
