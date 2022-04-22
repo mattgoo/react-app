@@ -192,6 +192,7 @@ function Home() {
       setAge(((dayjs().diff(dayjs('2000-01-01'), 'seconds')) / (60 * 60 * 24 * 365.25)).toFixed(9));
     }, 1000);
   }, []);
+  // thx ottomated
 
 
   return (
@@ -227,7 +228,23 @@ function About() {
       <h1 className='aboutText'>
         About Me
       </h1>
-      
+      <div className='center-on-screen'>
+        <Grid container spacing={2} className='info-grid'>
+          <Grid item xs={12} sm={6} className='info-text'>
+            <h1 className='aboutText'>
+              I am a full stack web developer with a passion for learning and problem solving.
+            </h1>
+          </Grid>
+          <Grid item xs={12} sm={6} className='info-text'>
+            <h1 className='aboutText'>
+              I have a background in software engineering and love programming.
+            </h1>
+          </Grid>
+        </Grid>
+      </div>
+      <h1 className='aboutTextSmall'>
+        Skills
+      </h1>
     </Stack>
   );
 }
