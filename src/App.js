@@ -190,7 +190,7 @@ function Home() {
   React.useEffect(() => {
     setInterval(() => {
       setAge(((dayjs().diff(dayjs('2000-01-01'), 'seconds')) / (60 * 60 * 24 * 365.25)).toFixed(9));
-    }, 1000);
+    }, 500);
   }, []);
   // thx ottomated
 
@@ -245,6 +245,11 @@ function About() {
       <h1 className='aboutTextSmall'>
         Skills
       </h1>
+      <div className='center-on-screen'>
+        <h1 className='info-text'>
+          Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more
+        </h1>
+      </div>
     </Stack>
   );
 }
