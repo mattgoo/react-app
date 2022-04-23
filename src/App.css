@@ -73,7 +73,6 @@
 }
 
 .loud {
-  font-size: calc(10px + 2vmin);
   color: rgb(145, 248, 255);
   text-shadow: 0 0 10px #000;
   scale: 1.1;

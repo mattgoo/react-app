@@ -232,12 +232,12 @@ function About() {
         <Grid container spacing={2} className='info-grid'>
           <Grid item xs={12} sm={6} className='info-text'>
             <h1 className='aboutText'>
-              I am a full stack web developer with a passion for learning and problem solving.
+              I am a <span className='loud'>full stack web developer</span> with a passion for learning and problem solving.
             </h1>
           </Grid>
           <Grid item xs={12} sm={6} className='info-text'>
             <h1 className='aboutText'>
-              I have a background in software engineering and love programming.
+              I have a background in software engineering and <span className='loud'>love programming</span>.
             </h1>
           </Grid>
         </Grid>
