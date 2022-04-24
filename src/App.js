@@ -182,6 +182,9 @@ function goToMyGithub () {
 
 
 function Home() {
+  const [loc, setLoc] = React.useState('');
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
+
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
   const [age, setAge] = React.useState(0);
@@ -212,6 +215,11 @@ function Home() {
           <div className='centered'>
             <h1>Hi, my name is Matt Goodwin and I am currently <span className='loud'>{age}</span> years old.</h1>
           </div>
+          <div className='center-on-screen'>
+            <h1 className='info-text'>
+              <p1>Welome to my website from {loc}!</p1>
+            </h1>
+          </div> 
         </Stack>
       </Box>
     </div>
@@ -219,9 +227,6 @@ function Home() {
 }
 
 function About() {
-  const [loc, setLoc] = React.useState('');
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
-
   return (
     <Stack spacing={2} className='stack-container'>
       <IconButton onClick={goToHome}>
@@ -251,12 +256,7 @@ function About() {
         <h1 className='info-text'>
           Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more
         </h1>
-      </div>
-      <div className='center-on-screen'>
-        <h1 className='info-text'>
-          <p1>Welome to my website from {loc}!</p1>
-        </h1>
-      </div>      
+      </div>     
     </Stack>
   );
 }
