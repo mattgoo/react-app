@@ -181,7 +181,6 @@ function goToMyGithub () {
 };
 
 
-
 function Home() {
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
@@ -220,6 +219,9 @@ function Home() {
 }
 
 function About() {
+  const [loc, setLoc] = React.useState('');
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
+
   return (
     <Stack spacing={2} className='stack-container'>
       <IconButton onClick={goToHome}>
@@ -250,6 +252,11 @@ function About() {
           Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more
         </h1>
       </div>
+      <div className='center-on-screen'>
+        <h1 className='info-text'>
+          <p1>Welome to my website from {loc}!</p1>
+        </h1>
+      </div>      
     </Stack>
   );
 }
