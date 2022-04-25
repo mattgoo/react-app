@@ -275,7 +275,12 @@ function About() {
           <FaReact size={70}/>
           <FaNode size={70}/>
         </h2>
-      </div>     
+      </div>  
+      <div className='center-on-screen'>
+        <div>
+          <h1 className='link-text'>Try Hack Me Profile</h1>
+        </div>
+      </div>
     </Stack>
   );
 }
