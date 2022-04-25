@@ -159,8 +159,13 @@
   color: #fff;
   text-shadow: 0 0 10px #000;
   text-align: center;
+  margin: 10px;
 }
 
+
+.icon-size {
+  size: 70;
+}
 
 
 

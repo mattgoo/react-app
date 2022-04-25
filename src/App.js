@@ -30,6 +30,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import dayjs from 'dayjs';
 
 
+// Info page
+import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub } from 'react-icons/fa';
+import { SiDjango, SiMysql, SiAdobe, SiKalilinux } from 'react-icons/si';
+
+
 // set page header
 document.title = 'Matt Goodwin';
 
@@ -254,8 +259,22 @@ function About() {
       </h1>
       <div className='center-on-screen'>
         <h1 className='info-text'>
-          Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more
+          Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more <br />
+          <FaPython size={70} />
+          <FaJava size={70} />
+          <FaLinux size={70} />
+          <SiKalilinux size={70} />
+          <FaWindows size={70} />
+          <SiMysql size={70} />
+          <FaGithub size={70} />
+          <SiDjango size={70} />
+          <SiAdobe size={70} />
         </h1>
+        <h2 className='info-text'>
+          I am currently learning React, Node, and React Native.<br />
+          <FaReact size={70}/>
+          <FaNode size={70}/>
+        </h2>
       </div>     
     </Stack>
   );
@@ -271,7 +290,7 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-
+// fix me
 function Gallery() {
   return (
     <Stack className='App'>
