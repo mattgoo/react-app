@@ -183,7 +183,11 @@ function leavePage() {
 function goToMyGithub () {
   window.open('https://github.com/mattgoo');
   window.open('https://github.com/mngoodwin');
-};
+}
+
+function goToTHMProfile() {
+  window.open('https://tryhackme.com/p/mattgoo');
+}
 
 
 function Home() {
@@ -277,7 +281,7 @@ function About() {
         </h2>
       </div>  
       <div className='center-on-screen'>
-        <div>
+        <div onClick={goToTHMProfile}>
           <h1 className='link-text'>Try Hack Me Profile</h1>
         </div>
       </div>
