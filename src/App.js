@@ -298,7 +298,7 @@ function About() {
         <Grid container spacing={2} className='info-grid'>
           <Grid item xs={12} sm={6} className='info-text'>
             <h1 className='info-text'>
-              Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more <br />
+              Python - Java - Linux - Kali - Windows - C - SQL - Git - Django - Adobe - and more <br />
               <FaPython className='icon' size={70} onClick={() => goToIcon("python")}/>
               <FaJava className='icon' size={70} onClick={() => goToIcon("java")}/>
               <FaLinux className='icon' size={70} onClick={() => goToIcon("linux")}/>
