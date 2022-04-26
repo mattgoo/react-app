@@ -275,7 +275,7 @@ function About() {
         <HomeIcon className='white-home'/>
       </IconButton>
       <h1 className='aboutText'>
-        About Me
+        <span className='loud'>About Me</span>
       </h1>
       <div className='center-on-screen'>
         <Grid container spacing={2} className='info-grid'>
@@ -292,26 +292,32 @@ function About() {
         </Grid>
       </div>
       <h1 className='aboutTextSmall'>
-        Skills
+        <span className='loud'>Skills</span><br /><span className='notice-me'>(Icons Clickable)</span>
       </h1>
       <div className='center-on-screen'>
-        <h1 className='info-text'>
-          Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more <br />
-          <FaPython className='icon' size={70} onClick={() => goToIcon("python")}/>
-          <FaJava className='icon' size={70} onClick={() => goToIcon("java")}/>
-          <FaLinux className='icon' size={70} onClick={() => goToIcon("linux")}/>
-          <SiKalilinux className='icon' size={70} onClick={() => goToIcon("kali")}/>
-          <FaWindows className='icon' size={70} onClick={() => goToIcon("windows")}/>
-          <SiMysql className='icon' size={70} onClick={() => goToIcon("mysql")}/>
-          <FaGithub className='icon' size={70} onClick={() => goToIcon("github")}/>
-          <SiDjango className='icon' size={70} onClick={() => goToIcon("django")}/>
-          <SiAdobe className='icon' size={70} onClick={() => goToIcon("adobe")}/>
-        </h1>
-        <h2 className='info-text'>
-          I am currently learning React, Node, and React Native.<br />
-          <FaReact className='icon' size={70} onClick={() => goToIcon("react")}/>
-          <FaNode className='icon' size={70} onClick={() => goToIcon("node")}/>
-        </h2>
+        <Grid container spacing={2} className='info-grid'>
+          <Grid item xs={12} sm={6} className='info-text'>
+            <h1 className='info-text'>
+              Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more <br />
+              <FaPython className='icon' size={70} onClick={() => goToIcon("python")}/>
+              <FaJava className='icon' size={70} onClick={() => goToIcon("java")}/>
+              <FaLinux className='icon' size={70} onClick={() => goToIcon("linux")}/>
+              <SiKalilinux className='icon' size={70} onClick={() => goToIcon("kali")}/>
+              <FaWindows className='icon' size={70} onClick={() => goToIcon("windows")}/>
+              <SiMysql className='icon' size={70} onClick={() => goToIcon("mysql")}/>
+              <FaGithub className='icon' size={70} onClick={() => goToIcon("github")}/>
+              <SiDjango className='icon' size={70} onClick={() => goToIcon("django")}/>
+              <SiAdobe className='icon' size={70} onClick={() => goToIcon("adobe")}/>
+            </h1>
+          </Grid>
+          <Grid item xs={12} sm={6} className='info-text'>
+            <h2 className='info-text'>
+              I am currently learning React, Node, and React Native.<br />
+              <FaReact className='icon' size={70} onClick={() => goToIcon("react")}/>
+              <FaNode className='icon' size={70} onClick={() => goToIcon("node")}/>
+            </h2>
+          </Grid>
+        </Grid>
       </div>  
       <div className='center-on-screen'>
         <div onClick={goToTHMProfile}>

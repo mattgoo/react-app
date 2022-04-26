@@ -73,7 +73,7 @@
 }
 
 .loud {
-  color: rgb(145, 248, 255);
+  color: rgb(95, 244, 255);
   text-shadow: 0 0 10px #000;
   scale: 1.1;
 }
@@ -207,6 +207,9 @@
   color: #61dafb;
 }
 
+.notice-me {
+  color: rgb(255, 130, 130);
+}
 
 
 
