@@ -224,8 +224,8 @@ function goToIcon(icon) {
 
 
 function Home() {
-  const [ip, setLoc] = React.useState('');
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
+  const [loc, setLoc] = React.useState('');
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.ip));
 
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
@@ -259,7 +259,7 @@ function Home() {
           </div>
           <div className='center-on-screen'>
             <h1 className='info-text'>
-              <p1>Welome, user from {ip}!</p1>
+              <p1>Welome, user from {loc}!</p1>
             </h1>
           </div> 
         </Stack>
