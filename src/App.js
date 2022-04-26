@@ -225,7 +225,7 @@ function goToIcon(icon) {
 
 function Home() {
   const [loc, setLoc] = React.useState('');
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.ip));
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
 
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
