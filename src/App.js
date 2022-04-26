@@ -224,8 +224,8 @@ function goToIcon(icon) {
 
 
 function Home() {
-  const [loc, setLoc] = React.useState('');
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
+  const [ip, setLoc] = React.useState('');
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.ip));
 
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
@@ -259,7 +259,7 @@ function Home() {
           </div>
           <div className='center-on-screen'>
             <h1 className='info-text'>
-              <p1>Welome to my website from {loc}!</p1>
+              <p1>Welome, {ip}!</p1>
             </h1>
           </div> 
         </Stack>
@@ -271,9 +271,11 @@ function Home() {
 function About() {
   return (
     <Stack spacing={2} className='stack-container'>
-      <IconButton onClick={goToHome}>
-        <HomeIcon className='white-home'/>
-      </IconButton>
+      <div>
+        <IconButton onClick={goToHome}>
+          <HomeIcon className='white-home'/>
+        </IconButton>
+      </div>
       <h1 className='aboutText'>
         <span className='loud'>About Me</span>
       </h1>
@@ -286,7 +288,7 @@ function About() {
           </Grid>
           <Grid item xs={12} sm={6} className='info-text'>
             <h1 className='aboutText'>
-              I have a background in software engineering and <span className='loud'>love programming</span>.
+              I have a background in software engineering and <span className='loud'>enjoy programming</span>.
             </h1>
           </Grid>
         </Grid>

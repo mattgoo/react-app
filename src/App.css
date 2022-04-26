@@ -130,8 +130,8 @@
   display: flex;
   flex: 1;
   align-items: center;
-  justify-content: space-evenly;
 }
+
 
 .aboutText {
   font-size: calc(10px + 4vmin);
@@ -143,6 +143,7 @@
   font-size: calc(5px + 2vmin);
   color: #fff;
   text-shadow: 0 0 10px #000;
+  text-align: center;
 }
 
 .center-on-screen {
