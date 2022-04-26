@@ -227,6 +227,9 @@ function Home() {
   const [loc, setLoc] = React.useState('');
   fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
 
+  const [ip, setIP] = React.useState('');
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
+
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');
   const [age, setAge] = React.useState(0);
@@ -260,6 +263,7 @@ function Home() {
           <div className='center-on-screen'>
             <h1 className='info-text'>
               <p1>Welome, user from {loc}!</p1>
+              <p1>IP {ip}</p1>
             </h1>
           </div> 
         </Stack>
