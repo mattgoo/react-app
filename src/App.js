@@ -31,7 +31,7 @@ import dayjs from 'dayjs';
 
 
 // Info page
-import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub } from 'react-icons/fa';
+import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub, FaGit } from 'react-icons/fa';
 import { SiDjango, SiMysql, SiAdobe, SiKalilinux } from 'react-icons/si';
 
 
@@ -150,6 +150,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="gallery" element={<Gallery />} />
+        <Route path="projects" element={<Projects />} />
       </Routes>
     </Router>
   );
@@ -171,22 +172,54 @@ function goToHome() {
   window.location.href = '/';
 }
 
-
-// popup alert function asking user if they want to leave the page
-function leavePage() {
-  if (window.confirm("Open Matt's school and personl Github?")) {
-    goToMyGithub();
-  }
+function goToProjects() {
+  window.location.href = '/projects';
 }
 
 
-function goToMyGithub () {
-  window.open('https://github.com/mattgoo');
-  window.open('https://github.com/mngoodwin');
+// popup alert function asking user if they want to leave the page
+// function leavePage() {
+//   if (window.confirm("Open Matt's school and personl Github?")) {
+//     goToMyGithub();
+//   }
+// }
+
+
+function goToMyGithub (choice) {
+  if (choice === 'personal') {
+    window.open('https://github.com/mattgoo');
+  } else if (choice === 'school') {
+    window.open('https://github.com/mngoodwin');
+  }
 }
 
 function goToTHMProfile() {
   window.open('https://tryhackme.com/p/mattgoo');
+}
+
+// go to about page of icons selected
+function goToIcon(icon) {
+  if(icon === 'python') {
+    window.open('https://www.python.org/');
+  } else if (icon === 'django') {
+    window.open('https://www.djangoproject.com/');
+  } else if (icon === 'react') {
+    window.open('https://reactjs.org/');
+  } else if (icon === 'node') {
+    window.open('https://nodejs.org/en/');
+  } else if (icon === 'mysql') {
+    window.open('https://www.mysql.com/');
+  } else if (icon === 'java') {
+    window.open('https://www.java.com/en/');
+  } else if (icon === 'linux') {
+    window.open('https://www.linux.org/');
+  } else if (icon === 'windows') {
+    window.open('https://www.microsoft.com/en-us/windows/');
+  } else if (icon === 'adobe') {
+    window.open('https://www.adobe.com/');
+  } else if (icon === 'kali') {
+    window.open('https://www.kali.org/');
+  }
 }
 
 
@@ -217,7 +250,7 @@ function Home() {
             <Grid className='grid-inner' onClick={goToGallery} item xs={4} sx={{ backgroundImage: `url(${galleryImg})`}}>
               <h1 className='big-Text'>{GalleryTitle}</h1>
             </Grid>
-            <Grid className='grid-inner' onClick={leavePage} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
+            <Grid className='grid-inner' onClick={goToProjects} item xs={4} sx={{ backgroundImage: `url(${projectsImg})`}}>
               <h1 className='big-Text'>Projects</h1>
             </Grid>
           </Grid>
@@ -264,20 +297,20 @@ function About() {
       <div className='center-on-screen'>
         <h1 className='info-text'>
           Python - Java - Linux - Windows - Kali - C - SQL - Git - Django - Adobe - and more <br />
-          <FaPython size={70} />
-          <FaJava size={70} />
-          <FaLinux size={70} />
-          <SiKalilinux size={70} />
-          <FaWindows size={70} />
-          <SiMysql size={70} />
-          <FaGithub size={70} />
-          <SiDjango size={70} />
-          <SiAdobe size={70} />
+          <FaPython className='icon' size={70} onClick={() => goToIcon("python")}/>
+          <FaJava className='icon' size={70} onClick={() => goToIcon("java")}/>
+          <FaLinux className='icon' size={70} onClick={() => goToIcon("linux")}/>
+          <SiKalilinux className='icon' size={70} onClick={() => goToIcon("kali")}/>
+          <FaWindows className='icon' size={70} onClick={() => goToIcon("windows")}/>
+          <SiMysql className='icon' size={70} onClick={() => goToIcon("mysql")}/>
+          <FaGithub className='icon' size={70} onClick={() => goToIcon("github")}/>
+          <SiDjango className='icon' size={70} onClick={() => goToIcon("django")}/>
+          <SiAdobe className='icon' size={70} onClick={() => goToIcon("adobe")}/>
         </h1>
         <h2 className='info-text'>
           I am currently learning React, Node, and React Native.<br />
-          <FaReact size={70}/>
-          <FaNode size={70}/>
+          <FaReact className='icon' size={70} onClick={() => goToIcon("react")}/>
+          <FaNode className='icon' size={70} onClick={() => goToIcon("node")}/>
         </h2>
       </div>  
       <div className='center-on-screen'>
@@ -324,6 +357,39 @@ function Gallery() {
           </ImageListItem>
         ))}
       </ImageList>
+    </Stack>
+  );
+}
+
+function Projects() {
+  return (
+    <Stack spacing={2} className='stack-container'>
+      <IconButton onClick={goToHome}>
+        <HomeIcon className='white-home'/>
+      </IconButton>
+      <h1 className='aboutText'>
+        Githubs
+      </h1>
+      <div className='center-on-screen'>
+        <Grid container spacing={2} className='info-grid'>
+          <Grid item xs={12} sm={6} onClick={() => goToMyGithub("personal")}>
+            <div className='git-page'>
+              <h1>
+                Personal Github
+              </h1>
+              <FaGithub size={140}/>
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={6} className='info-grid'>
+          <div className='git-page'>
+              <h1>
+                School Github
+              </h1>
+              <FaGithub size={140}/>
+            </div>
+          </Grid>
+        </Grid>
+      </div>
     </Stack>
   );
 }

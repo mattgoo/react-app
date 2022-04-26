@@ -162,6 +162,11 @@
   margin: 10px;
 }
 
+.info-text:hover {
+  scale: 1.1;
+  color: #61dafb;
+}
+
 .link-text {
   font-size: calc(5px + 3vmin);
   color: rgb(0, 234, 255);
@@ -177,9 +182,33 @@
   text-decoration: underline;
 }
 
-.icon-size {
-  size: 70;
+
+.icon:hover {
+  cursor: pointer;
+  color: #61dafb;
+  scale: 1.1;
 }
+
+.git-page {
+  text-align: center;
+}
+
+.git-page > h1{
+  font-size: calc(5px + 4vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  text-align: center;
+  margin: 10px;
+}
+
+.git-page:hover {
+  color: #61dafb;
+  scale: 1.5;
+}
+
+
+
+
 
 
 
