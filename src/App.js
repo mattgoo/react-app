@@ -31,7 +31,7 @@ import dayjs from 'dayjs';
 
 
 // Info page
-import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub, FaGit } from 'react-icons/fa';
+import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub, FaGithubAlt } from 'react-icons/fa';
 import { SiDjango, SiMysql, SiAdobe, SiKalilinux } from 'react-icons/si';
 
 
@@ -393,7 +393,7 @@ function Projects() {
               <h1>
                 School Github
               </h1>
-              <FaGithub size={140}/>
+              <FaGithubAlt size={140}/>
             </div>
           </Grid>
         </Grid>
