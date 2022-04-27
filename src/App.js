@@ -262,8 +262,8 @@ function Home() {
           </div>
           <div className='center-on-screen'>
             <h1 className='info-text'>
-              <p1>Welome, user from {loc}!</p1>
-              <p1>IP {ip}</p1>
+              <p1>Welome, user from {loc}!</p1><br />
+              <p1>{ip}</p1>
             </h1>
           </div> 
         </Stack>
