@@ -32,7 +32,7 @@ import dayjs from 'dayjs';
 
 // Info page
 import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub, FaGithubAlt } from 'react-icons/fa';
-import { SiDjango, SiMysql, SiAdobe, SiKalilinux } from 'react-icons/si';
+import { SiDjango, SiMysql, SiAdobe, SiKalilinux, SiTryhackme } from 'react-icons/si';
 
 
 // set page header
@@ -304,14 +304,15 @@ function About() {
         <Grid container spacing={2} className='info-grid'>
           <Grid item xs={12} sm={6} className='info-text'>
             <h1 className='info-text'>
-              Python - Java - Linux - Kali - Windows - C - SQL - Git - Django - Adobe - and more <br />
+              Python - Java - Linux - Kali - Cyber Security - Windows - C - SQL - Git - Django - Adobe - and more <br />
               <FaPython className='icon' size={70} onClick={() => goToIcon("python")}/>
               <FaJava className='icon' size={70} onClick={() => goToIcon("java")}/>
               <FaLinux className='icon' size={70} onClick={() => goToIcon("linux")}/>
+              <SiTryhackme className='icon' size={70} onClick={() => goToTHMProfile()}/>
               <SiKalilinux className='icon' size={70} onClick={() => goToIcon("kali")}/>
               <FaWindows className='icon' size={70} onClick={() => goToIcon("windows")}/>
               <SiMysql className='icon' size={70} onClick={() => goToIcon("mysql")}/>
-              <FaGithub className='icon' size={70} onClick={() => goToIcon("github")}/>
+              <FaGithub className='icon' size={70} onClick={() => goToMyGithub("personal")}/>
               <SiDjango className='icon' size={70} onClick={() => goToIcon("django")}/>
               <SiAdobe className='icon' size={70} onClick={() => goToIcon("adobe")}/>
             </h1>
