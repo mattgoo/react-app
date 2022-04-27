@@ -33,6 +33,7 @@ import dayjs from 'dayjs';
 // Info page
 import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub, FaGithubAlt } from 'react-icons/fa';
 import { SiDjango, SiMysql, SiAdobe, SiKalilinux, SiTryhackme } from 'react-icons/si';
+import { DiJavascript1 } from 'react-icons/di';
 
 
 // set page header
@@ -219,6 +220,8 @@ function goToIcon(icon) {
     window.open('https://www.adobe.com/');
   } else if (icon === 'kali') {
     window.open('https://www.kali.org/');
+  } else if (icon === 'javascript') {
+    window.open('https://www.javascript.com/');
   }
 }
 
@@ -321,6 +324,7 @@ function About() {
             <h2 className='info-text'>
               I am currently learning React, Node, and React Native.<br />
               <FaReact className='icon' size={70} onClick={() => goToIcon("react")}/>
+              <DiJavascript1 className='icon' size={70} onClick={() => goToIcon("javascript")}/>
               <FaNode className='icon' size={70} onClick={() => goToIcon("node")}/>
             </h2>
           </Grid>
