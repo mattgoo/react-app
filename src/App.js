@@ -3,6 +3,7 @@ import infoImg from './images/infoImg.png';
 import galleryImg from './images/galleryImg.png';
 import projectsImg from './images/projectsImg.png';
 import React from 'react';
+import { useState, useCallback } from 'react';
 
 //for Home page
 import Grid from '@mui/material/Grid';
@@ -17,10 +18,8 @@ import {
 } from "react-router-dom";
 
 // gallery images
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-
 import Gallery from 'react-photo-gallery';
+import Carousel, { Modal, ModalGateway } from "react-images";
 
 
 // back button 
@@ -508,52 +507,41 @@ function About() {
 }
 
 
-// function srcset(image, size, rows = 1, cols = 1) {
-//   return {
-//     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-//     srcSet: `${image}?w=${size * cols}&h=${
-//       size * rows
-//     }&fit=crop&auto=format&dpr=2 2x`,
-//   };
-// }
-
-// fix me
-// function Gallery() {
-//   return (
-//     <Stack className='App'>
-//       <IconButton onClick={goToHome}>
-//         <HomeIcon className='white-home'/>
-//       </IconButton>
-//       <h1 className='normal-Text'>Gallery!</h1>
-//       <h6 className='small-Text'>(Work in Progress: will load eventually)</h6>
-//       <ImageList
-//         className='image-list'
-//         variant="quilted"
-//         cols={4}
-//         rowHeight={121}
-//       >
-//         {itemData.map((item) => (
-//           <ImageListItem className='enlarge-pic' key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-//             <img
-//               {...srcset(item.img, 121, item.rows, item.cols)}
-//               alt={item.title}
-//               loading="lazy"
-//             />
-//           </ImageListItem>
-//         ))}
-//       </ImageList>
-//     </Stack>
-//   );
-// }
-
 
 function GalleryPage( ) {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
+
   return (
     <Stack className='App'>
       <IconButton onClick={goToHome}>
         <HomeIcon className='white-home'/>
       </IconButton>
-      <Gallery photos={itemData3} direction={"column"}/>
+      <Gallery photos={itemData3} direction={"column"} onClick={openLightbox}/>
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={itemData3.map(x => ({
+                ...x,
+                srcset: x.srcSet,
+                caption: x.title
+              }))}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway> 
     </Stack>
   );
 }
