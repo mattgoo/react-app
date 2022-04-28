@@ -20,6 +20,8 @@ import {
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
+import Gallery from 'react-photo-gallery';
+
 
 // back button 
 import IconButton from '@mui/material/IconButton';
@@ -141,6 +143,172 @@ const itemData = [
   },
 ];
 
+const itemData2 = [
+  {
+    src: require('./images/gallery/CourierPoster.png'),
+    height: 5,
+    width: 2,
+  },
+  {
+    src: require('./images/gallery/IMG_0091.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0101.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0098.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0100.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0108.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0111.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0161.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/Cover1.png'),
+    height: 2.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0167.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0169.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0170.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0171.PNG'),
+    height: 2.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0173.PNG'),
+    height: 1,
+    width: 4,
+  },
+  {
+    src: require('./images/gallery/IMG_0174.PNG'),
+    height: 5,
+    width: 4,
+  },
+  {
+    src: require('./images/gallery/IMG_0175.PNG'),
+    height: 2,
+    width: 1,
+  },
+];
+
+const itemData3 = [
+  {
+    src: require('./images/gallery/CourierPoster.png'),
+    height: 3,
+    width: 2,
+  },
+  {
+    src: require('./images/gallery/IMG_0091.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0101.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0098.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0100.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0108.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0174.PNG'),
+    height: 3,
+    width: 4,
+  },
+  {
+    src: require('./images/gallery/IMG_0111.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0161.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/Cover1.png'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0167.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0169.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0170.PNG'),
+    height: 1,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0171.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+  {
+    src: require('./images/gallery/IMG_0173.PNG'),
+    height: 1,
+    width: 1.5,
+  },
+  {
+    src: require('./images/gallery/IMG_0175.PNG'),
+    height: 1.5,
+    width: 1,
+  },
+];
+
 
 function App() {
  
@@ -150,7 +318,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="gallery" element={<Gallery />} />
+        <Route path="gallery" element={<GalleryPage />} />
         <Route path="projects" element={<Projects />} />
       </Routes>
     </Router>
@@ -340,40 +508,52 @@ function About() {
 }
 
 
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
+// function srcset(image, size, rows = 1, cols = 1) {
+//   return {
+//     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+//     srcSet: `${image}?w=${size * cols}&h=${
+//       size * rows
+//     }&fit=crop&auto=format&dpr=2 2x`,
+//   };
+// }
 
 // fix me
-function Gallery() {
+// function Gallery() {
+//   return (
+//     <Stack className='App'>
+//       <IconButton onClick={goToHome}>
+//         <HomeIcon className='white-home'/>
+//       </IconButton>
+//       <h1 className='normal-Text'>Gallery!</h1>
+//       <h6 className='small-Text'>(Work in Progress: will load eventually)</h6>
+//       <ImageList
+//         className='image-list'
+//         variant="quilted"
+//         cols={4}
+//         rowHeight={121}
+//       >
+//         {itemData.map((item) => (
+//           <ImageListItem className='enlarge-pic' key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+//             <img
+//               {...srcset(item.img, 121, item.rows, item.cols)}
+//               alt={item.title}
+//               loading="lazy"
+//             />
+//           </ImageListItem>
+//         ))}
+//       </ImageList>
+//     </Stack>
+//   );
+// }
+
+
+function GalleryPage( ) {
   return (
     <Stack className='App'>
       <IconButton onClick={goToHome}>
         <HomeIcon className='white-home'/>
       </IconButton>
-      <h1 className='normal-Text'>Gallery!</h1>
-      <h6 className='small-Text'>(Work in Progress: will load eventually)</h6>
-      <ImageList
-        className='image-list'
-        variant="quilted"
-        cols={4}
-        rowHeight={121}
-      >
-        {itemData.map((item) => (
-          <ImageListItem className='enlarge-pic' key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-            <img
-              {...srcset(item.img, 121, item.rows, item.cols)}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      <Gallery photos={itemData3} direction={"column"}/>
     </Stack>
   );
 }
