@@ -5,6 +5,7 @@ import projectsImg from './images/projectsImg.png';
 import React from 'react';
 import { useState, useCallback, useEffect } from 'react';
 
+
 //for Home page
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
@@ -406,13 +407,11 @@ function goToIcon(icon) {
 
 
 function Home() {
-  const [loc, setLoc] = React.useState('');
-  const [ip, setIP] = React.useState('');
-
-  useEffect(() => {
-    fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
-    fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
-  }, []);
+  const [loc, setLoc] = React.useState('location');
+  const [ip, setIP] = React.useState('ip');
+  
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
+  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
 
 
   const [AboutTitle, setInfoTitle] = React.useState('About');
