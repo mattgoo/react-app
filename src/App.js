@@ -407,11 +407,13 @@ function goToIcon(icon) {
 
 
 function Home() {
-  const [loc, setLoc] = React.useState('');
-  const [ip, setIP] = React.useState('');
+  // const [loc, setLoc] = React.useState(null);
+  // const [ip, setIP] = React.useState(null);
   
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
+  // fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
+  // fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
+
+  
 
 
   const [AboutTitle, setInfoTitle] = React.useState('About');
@@ -444,12 +446,12 @@ function Home() {
           <div className='centered'>
             <h1>Hi, my name is Matt Goodwin and I am currently <span className='loud'>{age}</span> years old.</h1>
           </div>
-          <div className='center-on-screen'>
+          {/* <div className='center-on-screen'>
             <h1 className='info-text'>
               <p1>Welome, user from {loc}!</p1><br />
               <p1>{ip}</p1>
             </h1>
-          </div> 
+          </div>  */}
         </Stack>
       </Box>
     </div>
