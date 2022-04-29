@@ -407,8 +407,8 @@ function goToIcon(icon) {
 
 
 function Home() {
-  const [loc, setLoc] = React.useState('location');
-  const [ip, setIP] = React.useState('ip');
+  const [loc, setLoc] = React.useState('');
+  const [ip, setIP] = React.useState('');
   
   fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
   fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
