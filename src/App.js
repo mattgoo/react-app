@@ -3,7 +3,7 @@ import infoImg from './images/infoImg.png';
 import galleryImg from './images/galleryImg.png';
 import projectsImg from './images/projectsImg.png';
 import React from 'react';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 //for Home page
 import Grid from '@mui/material/Grid';
@@ -35,6 +35,10 @@ import dayjs from 'dayjs';
 import { FaReact, FaNode, FaPython, FaLinux, FaJava, FaWindows, FaGithub, FaGithubAlt } from 'react-icons/fa';
 import { SiDjango, SiMysql, SiAdobe, SiKalilinux, SiTryhackme } from 'react-icons/si';
 import { DiJavascript1 } from 'react-icons/di';
+
+
+// Idle Timer
+import { useIdleTimer } from 'react-idle-timer';
 
 
 // set page header
@@ -310,7 +314,15 @@ const itemData3 = [
 
 
 function App() {
- 
+  // const onIdle = () => {
+  //   console.log('Idle');
+  // }
+
+  // const onActive = (event) => {
+  //   console.log('Active');
+  // }
+
+  // const idleTimer = useIdleTimer({ onIdle, onActive })
 
   return (
     <Router>
@@ -395,10 +407,13 @@ function goToIcon(icon) {
 
 function Home() {
   const [loc, setLoc] = React.useState('');
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
-
   const [ip, setIP] = React.useState('');
-  fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
+
+  useEffect(() => {
+    fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
+    fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
+  }, []);
+
 
   const [AboutTitle, setInfoTitle] = React.useState('About');
   const [GalleryTitle, setGalleryTitle] = React.useState('Gallery');

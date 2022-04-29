@@ -7504,6 +7504,11 @@ react-icons@^4.3.1:
   resolved "https://registry.npmjs.org/react-icons/-/react-icons-4.3.1.tgz"
   integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
+react-idle-timer@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/react-idle-timer/-/react-idle-timer-5.0.0.tgz#03bb096d726894d1a0250a15aebeb6580d25255a"
+  integrity sha512-41ZoZnGJQH4P7v22pWi5rx1kBEjcOdHIB9OFEvyKtj4UX3T4hB3rJya566QZsFSYMmOA9+rgaXc1JSXy7c+g9A==
+
 react-images@^1.2.0-beta.7:
   version "1.2.0-beta.7"
   resolved "https://registry.yarnpkg.com/react-images/-/react-images-1.2.0-beta.7.tgz#8a5804f8a5d08a25e64180eecb43a77d4e023e16"
