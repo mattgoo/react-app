@@ -203,6 +203,7 @@
 .git-page:hover {
   color: #61dafb;
   scale: 1.2;
+  cursor: pointer;
 }
 
 .git-page:hover > h1 {

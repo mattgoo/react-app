@@ -314,17 +314,7 @@ const itemData3 = [
 ];
 
 
-function App() {
-  // const onIdle = () => {
-  //   console.log('Idle');
-  // }
-
-  // const onActive = (event) => {
-  //   console.log('Active');
-  // }
-
-  // const idleTimer = useIdleTimer({ onIdle, onActive })
-
+const App = () => {
   return (
     <Router>
       <Routes>
@@ -413,7 +403,17 @@ function Home() {
   // fetch('https://ip-api.io/json').then(response => response.json()).then(data => setLoc(data.city));
   // fetch('https://ip-api.io/json').then(response => response.json()).then(data => setIP(data.ip));
 
-  
+  console.log("Home");
+
+  const onIdle = () => {
+    console.log('Idle');
+  }
+
+  const onActive = (event) => {
+    console.log('Active');
+  }
+
+  const idleTimer = useIdleTimer({ onIdle, onActive })
 
 
   const [AboutTitle, setInfoTitle] = React.useState('About');
@@ -581,7 +581,7 @@ function Projects() {
               <FaGithub size={140}/>
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} className='info-grid'>
+          <Grid item xs={12} sm={6} onClick={() => goToMyGithub("school")}>
           <div className='git-page'>
               <h1>
                 School Github
