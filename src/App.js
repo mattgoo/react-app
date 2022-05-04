@@ -348,13 +348,13 @@ function goToProjects() {
 }
 
 
+
 // popup alert function asking user if they want to leave the page
 // function leavePage() {
 //   if (window.confirm("Open Matt's school and personl Github?")) {
 //     goToMyGithub();
 //   }
 // }
-
 
 function goToMyGithub (choice) {
   if (choice === 'personal') {
