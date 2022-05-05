@@ -1,11 +1,11 @@
-import './App.css';
-import React from 'react';
-
 //import pages
 import Home from './pages/HomePage';
 import Projects from './pages/ProjectsPage';
 import Gallery from './pages/GalleryPage';
 import About from './pages/AboutPage';
+
+// import other components
+import Test from './components/test';
 
 // for routing to other pages
 import {
@@ -16,9 +16,6 @@ import {
 
 // Idle Timer
 import { useIdleTimer } from 'react-idle-timer';
-
-// import other components
-import Test from './components/test';
 
 // set page header
 document.title = 'Matt Goodwin';
