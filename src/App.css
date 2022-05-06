@@ -152,6 +152,13 @@
   justify-content: center;
 }
 
+.center-projects {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
 .info-grid {
   max-width: 90%;
 }

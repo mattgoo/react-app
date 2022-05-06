@@ -1,0 +1,8 @@
+.git-title {
+    font-size: calc(5px + 4vmin);
+    color: #61dafb;
+    text-shadow: 0 0 10px #000;
+    text-align: center;
+    margin: 10px;
+    scale: 1.4;
+}
