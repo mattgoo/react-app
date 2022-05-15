@@ -90,6 +90,11 @@ const itemData = [
         height: 1.5,
         width: 1,
     },
+    {
+        src: require('../images/gallery/pacman.png'),
+        height: 1.5,
+        width: 1,
+    },
 ];
 
 
