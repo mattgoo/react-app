@@ -40,6 +40,7 @@
 }
 
 .big-Text {
+  font-family: 'Coda', cursive;
   font-size: calc(10px + 4vmin);
   color: #fff;
   text-shadow: 0 0 10px #000;
@@ -52,6 +53,7 @@
 }
 
 .small-Text {
+  font-family: 'Coda', cursive;
   display: flex;
   flex: 1;
   font-size: calc(5px + 2vmin);
@@ -66,6 +68,7 @@
 }
 
 .centered > h1 {
+  font-family: 'Coda', cursive;
   font-size: calc(10px + 2vmin);
   font-weight: bold;
   color: #fff;
@@ -73,6 +76,7 @@
 }
 
 .loud {
+  font-family: 'Coda', cursive;
   color: rgb(95, 244, 255);
   text-shadow: 0 0 10px #000;
   scale: 1.1;
@@ -92,6 +96,7 @@
 
 
 .normal-Text {
+  font-family: 'Coda', cursive;
   display: flex;
   flex: 1;
   font-size: calc(10px + 4vmin);
@@ -134,12 +139,14 @@
 
 
 .aboutText {
+  font-family: 'Coda', cursive;
   font-size: calc(10px + 4vmin);
   color: #fff;
   text-shadow: 0 0 10px #000;
 }
 
 .aboutTextSmall {
+  font-family: 'Coda', cursive;
   font-size: calc(5px + 2vmin);
   color: #fff;
   text-shadow: 0 0 10px #000;
@@ -164,6 +171,7 @@
 }
 
 .info-text {
+  font-family: 'Coda', cursive;
   font-size: calc(5px + 2vmin);
   color: #fff;
   text-shadow: 0 0 10px #000;
@@ -172,6 +180,7 @@
 }
 
 .link-text {
+  font-family: 'Coda', cursive;
   font-size: calc(5px + 3vmin);
   color: rgb(0, 234, 255);
   text-shadow: 0 0 10px #000;
@@ -200,6 +209,7 @@
 }
 
 .git-page > h1{
+  font-family: 'Coda', cursive;
   font-size: calc(5px + 4vmin);
   color: #fff;
   text-shadow: 0 0 10px #000;
@@ -221,6 +231,9 @@
   color: rgb(255, 130, 130);
 }
 
+.font-link {
+  font-family: 'Coda', cursive;
+}
 
 
 
