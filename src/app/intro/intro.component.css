@@ -1,0 +1,117 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  cursor: pointer;
+  display: block;
+}
+
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  background: #0d1117;
+  font-family: 'Press Start 2P', monospace;
+  color: #61dafb;
+  overflow: hidden;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.35) 2px,
+    rgba(0, 0, 0, 0.35) 3px
+  );
+  mix-blend-mode: multiply;
+  z-index: 2;
+}
+
+.scan-sweep {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 30vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(97, 218, 251, 0) 0%,
+    rgba(97, 218, 251, 0.12) 50%,
+    rgba(97, 218, 251, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.boot-stack {
+  position: absolute;
+  top: 14vh;
+  left: 6vw;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: clamp(0.7rem, 1.4vw, 1rem);
+  line-height: 1.6;
+  text-shadow: 0 0 6px rgba(97, 218, 251, 0.5);
+  z-index: 3;
+}
+
+.boot-line .char,
+.intro-title .char {
+  display: inline-block;
+  white-space: pre;
+}
+
+.cursor {
+  display: inline-block;
+  font-size: clamp(0.7rem, 1.4vw, 1rem);
+  color: #61dafb;
+  text-shadow: 0 0 6px rgba(97, 218, 251, 0.7);
+}
+
+.intro-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1.5rem, 6vw, 4rem);
+  color: #fff;
+  text-shadow:
+    0 0 8px rgba(97, 218, 251, 0.85),
+    0 0 22px rgba(97, 218, 251, 0.55),
+    0 0 40px rgba(97, 218, 251, 0.3);
+  letter-spacing: 0.05em;
+  z-index: 3;
+  text-align: center;
+  padding: 0 4vw;
+}
+
+.skip-hint {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 10px;
+  color: rgba(97, 218, 251, 0.45);
+  letter-spacing: 0.1em;
+  z-index: 4;
+  pointer-events: none;
+}
+
+@media (max-width: 414px) {
+  .intro-title {
+    font-size: clamp(1.1rem, 5.5vw, 2.5rem);
+    letter-spacing: 0.02em;
+    padding: 0 2vw;
+  }
+  .boot-stack {
+    top: 10vh;
+    left: 5vw;
+    font-size: 0.65rem;
+  }
+}

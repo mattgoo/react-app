@@ -8,6 +8,10 @@ export interface RevealOptions {
   ease?: string;
 }
 
+const prefersReducedMotion = (): boolean =>
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export function revealOnEnter(
   targets: gsap.TweenTarget,
   opts: RevealOptions = {},
@@ -16,6 +20,10 @@ export function revealOnEnter(
   const ensureRest = () => {
     gsap.set(targets, { opacity: 1, y: 0, clearProps: 'opacity,transform' });
   };
+  if (prefersReducedMotion()) {
+    ensureRest();
+    return gsap.to(targets, { duration: 0 });
+  }
   return gsap.fromTo(
     targets,
     { opacity: 0, y },

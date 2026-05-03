@@ -1,0 +1,26 @@
+<div #overlay class="intro-overlay">
+  <div class="scanlines"></div>
+  <div #scanSweep class="scan-sweep"></div>
+
+  <div class="boot-stack">
+    <div #line1 class="boot-line">
+      @for (ch of bootLine1; track $index) {
+        <span class="char">{{ ch === ' ' ? ' ' : ch }}</span>
+      }
+    </div>
+    <div #line2 class="boot-line">
+      @for (ch of bootLine2; track $index) {
+        <span class="char">{{ ch === ' ' ? ' ' : ch }}</span>
+      }
+    </div>
+    <span #cursor class="cursor">_</span>
+  </div>
+
+  <h1 #title class="intro-title">
+    @for (ch of titleChars; track $index) {
+      <span class="char">{{ ch === ' ' ? ' ' : ch }}</span>
+    }
+  </h1>
+
+  <span class="skip-hint">CLICK TO SKIP</span>
+</div>

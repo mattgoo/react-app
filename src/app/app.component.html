@@ -1,3 +1,6 @@
+@if (showIntro()) {
+  <app-intro (completed)="onIntroDone()" />
+}
 <div #outletWrap class="route-wrap">
   <router-outlet />
 </div>
