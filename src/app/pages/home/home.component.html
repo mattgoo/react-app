@@ -2,29 +2,57 @@
   <div class="home-stack">
     <div class="grid-container">
       <a
+        #aboutTile
+        appHover
+        [scale]="1.05"
+        [grayscale]="true"
         class="grid-inner tile-about"
         routerLink="/about"
       >
         <h1 class="big-Text">About</h1>
       </a>
       <a
+        #galleryTile
+        appHover
+        [scale]="1.05"
+        [grayscale]="true"
         class="grid-inner tile-gallery"
         routerLink="/gallery"
       >
         <h1 class="big-Text">Gallery</h1>
       </a>
       <a
+        #projectsTile
+        appHover
+        [scale]="1.05"
+        [grayscale]="true"
         class="grid-inner tile-projects"
         routerLink="/projects"
       >
         <h1 class="big-Text">Projects</h1>
       </a>
     </div>
-    <div class="centered">
+    <div #ageLine class="centered">
       <h1>
-        Hi, my name is Matt Goodwin and I am currently
-        <span class="loud">{{ age() }}</span>
-        years old.
+        @for (ch of beforeAgeChars; track $index) {
+          <span class="char">{{ ch }}</span>
+        }
+        @for (slot of ageSlots; track $index) {
+          @if (slot.kind === 'digit') {
+            <span class="char loud reel">
+              <span #reelStrip class="reel-strip">
+                @for (n of digits; track n) {
+                  <span class="reel-digit">{{ n }}</span>
+                }
+              </span>
+            </span>
+          } @else {
+            <span class="char loud">{{ slot.value }}</span>
+          }
+        }
+        @for (ch of afterAgeChars; track $index) {
+          <span class="char">{{ ch }}</span>
+        }
       </h1>
     </div>
   </div>

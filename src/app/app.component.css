@@ -3,3 +3,8 @@
   min-height: 100vh;
   background-color: #282c34;
 }
+
+.route-wrap {
+  display: block;
+  min-height: 100vh;
+}

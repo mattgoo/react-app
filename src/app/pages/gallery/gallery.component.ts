@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { faSolidHouse } from '@ng-icons/font-awesome/solid';
 import { Gallery, GalleryModule, ImageItem } from 'ng-gallery';
 import { Lightbox, LightboxModule } from 'ng-gallery/lightbox';
+import { HoverScaleDirective } from '../../shared/hover-scale.directive';
+import { revealOnEnter } from '../../shared/reveal';
 
 interface GalleryPhoto {
   src: string;
@@ -17,19 +19,19 @@ const galleryId = 'matt-gallery';
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, NgIcon, GalleryModule, LightboxModule],
+  imports: [CommonModule, NgIcon, GalleryModule, LightboxModule, HoverScaleDirective],
   viewProviders: [provideIcons({ faSolidHouse })],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css',
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent implements OnInit, AfterViewInit {
   private readonly gallery = inject(Gallery);
   private readonly lightbox = inject(Lightbox);
   private readonly router = inject(Router);
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
 
   protected readonly galleryId = galleryId;
 
-  // Mirrors itemData from the original React app — width/height ratios drive the masonry sizing.
   protected readonly photos: GalleryPhoto[] = [
     { src: 'assets/gallery/CourierPoster.png', width: 2, height: 3 },
     { src: 'assets/gallery/IMG_0091.PNG', width: 1, height: 1 },
@@ -57,6 +59,11 @@ export class GalleryComponent implements OnInit {
         (p) => new ImageItem({ src: p.src, thumb: p.src }),
       ),
     );
+  }
+
+  ngAfterViewInit(): void {
+    const tiles = this.host.nativeElement.querySelectorAll<HTMLElement>('.tile');
+    revealOnEnter(Array.from(tiles), { y: 30, stagger: 0.05, duration: 0.5 });
   }
 
   open(index: number): void {

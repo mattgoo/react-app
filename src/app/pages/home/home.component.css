@@ -9,7 +9,7 @@
   flex-direction: column;
   width: 100%;
   gap: 24px;
-  padding: 24px 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -27,4 +27,36 @@
 
 .tile-projects {
   background-image: url('/assets/images/projectsImg.png');
+}
+
+.char {
+  display: inline-block;
+  white-space: pre;
+  line-height: 1;
+}
+
+.char.loud {
+  scale: 1;
+}
+
+.reel {
+  vertical-align: top;
+  height: 1em;
+  overflow: hidden;
+  width: 1ch;
+  font-variant-numeric: tabular-nums;
+  position: relative;
+  top: 0.18em;
+}
+
+.reel-strip {
+  display: block;
+  will-change: transform;
+}
+
+.reel-digit {
+  display: block;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
 }

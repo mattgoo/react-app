@@ -1,6 +1,6 @@
 <div class="stack-container">
   <div class="home-row">
-    <button type="button" class="white-home" (click)="goHome()" aria-label="Home">
+    <button appHover type="button" class="white-home" (click)="goHome()" aria-label="Home">
       <ng-icon name="faSolidHouse" size="32"></ng-icon>
     </button>
   </div>
@@ -9,11 +9,11 @@
 
   <div class="center-projects">
     <div class="info-grid">
-      <div class="git-page" (click)="openUrl('https://github.com/mattgoo')">
+      <div appHover [scale]="1.2" class="git-page" (click)="openUrl('https://github.com/mattgoo')">
         <h1>Personal Github</h1>
         <ng-icon name="faBrandGithub" size="140"></ng-icon>
       </div>
-      <div class="git-page" (click)="openUrl('https://github.com/mngoodwin')">
+      <div appHover [scale]="1.2" class="git-page" (click)="openUrl('https://github.com/mngoodwin')">
         <h1>School Github</h1>
         <ng-icon name="faBrandGithubAlt" size="140"></ng-icon>
       </div>

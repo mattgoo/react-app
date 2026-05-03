@@ -1,6 +1,6 @@
 <div class="App gallery-page">
   <div class="home-row">
-    <button type="button" class="white-home" (click)="goHome()" aria-label="Home">
+    <button appHover type="button" class="white-home" (click)="goHome()" aria-label="Home">
       <ng-icon name="faSolidHouse" size="32"></ng-icon>
     </button>
   </div>
@@ -8,6 +8,10 @@
   <div class="masonry">
     @for (photo of photos; track photo.src; let i = $index) {
       <button
+        appHover
+        [scale]="1.02"
+        [color]="null"
+        hoverFilter="brightness(1.1)"
         type="button"
         class="tile"
         (click)="open(i)"

@@ -8,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
+  overflow-x: hidden;
 }
 
 code {
@@ -30,14 +31,13 @@ code {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 96px;
-  padding: 0 48px;
   height: 70vh;
   width: 100%;
   box-sizing: border-box;
 }
 
 .grid-inner {
+  position: relative;
   display: flex;
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,17 +45,7 @@ code {
   filter: grayscale(100%);
   align-items: flex-end;
   justify-content: flex-end;
-  transition: filter 0.2s ease;
-}
-
-.grid-inner:hover {
-  filter: grayscale(0%);
   cursor: pointer;
-}
-
-.grid-inner:hover > h1 {
-  scale: 1.1;
-  color: #61dafb;
 }
 
 .big-Text {
@@ -65,11 +55,6 @@ code {
   text-shadow: 0 0 10px #000;
   margin: 10px;
   transition: scale 0.2s ease, color 0.2s ease;
-}
-
-.big-Text:hover {
-  color: #61dafb;
-  scale: 1.1;
 }
 
 .small-Text {
@@ -124,11 +109,6 @@ code {
   align-items: center;
   justify-content: center;
   transition: scale 0.2s ease, color 0.2s ease;
-}
-
-.white-home:hover {
-  scale: 1.1;
-  color: #61dafb;
 }
 
 .stack-container {
@@ -208,23 +188,12 @@ code {
   cursor: pointer;
 }
 
-.link-text:hover {
-  color: #61dafb;
-  scale: 1.1;
-  text-decoration: underline;
-}
-
 .icon {
   display: inline-block;
   margin: 4px;
   color: #fff;
   transition: scale 0.2s ease, color 0.2s ease;
   cursor: pointer;
-}
-
-.icon:hover {
-  color: #61dafb;
-  scale: 1.1;
 }
 
 .git-page {
@@ -241,19 +210,10 @@ code {
 .git-page > h1 {
   font-family: 'Coda', cursive;
   font-size: calc(5px + 4vmin);
-  color: #fff;
+  color: inherit;
   text-shadow: 0 0 10px #000;
   text-align: center;
   margin: 10px;
-}
-
-.git-page:hover {
-  color: #61dafb;
-  scale: 1.2;
-}
-
-.git-page:hover > h1 {
-  color: #61dafb;
 }
 
 .notice-me {

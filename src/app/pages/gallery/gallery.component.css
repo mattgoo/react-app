@@ -46,12 +46,6 @@
   cursor: pointer;
   break-inside: avoid;
   overflow: hidden;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.tile:hover {
-  transform: scale(1.02);
-  filter: brightness(1.1);
 }
 
 .tile img {
