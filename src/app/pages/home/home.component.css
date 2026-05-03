@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home-stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+
+.grid-inner {
+  text-decoration: none;
+}
+
+.tile-about {
+  background-image: url('/assets/images/infoImg.png');
+}
+
+.tile-gallery {
+  background-image: url('/assets/images/galleryImg.png');
+}
+
+.tile-projects {
+  background-image: url('/assets/images/projectsImg.png');
+}

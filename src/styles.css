@@ -1,0 +1,275 @@
+/* Global styles ported from the original React app's index.css + App.css + ProjectsPage.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+}
+
+.App-Basic {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 96px;
+  padding: 0 48px;
+  height: 70vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-inner {
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  align-items: flex-end;
+  justify-content: flex-end;
+  transition: filter 0.2s ease;
+}
+
+.grid-inner:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.grid-inner:hover > h1 {
+  scale: 1.1;
+  color: #61dafb;
+}
+
+.big-Text {
+  font-family: 'Coda', cursive;
+  font-size: calc(10px + 4vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  margin: 10px;
+  transition: scale 0.2s ease, color 0.2s ease;
+}
+
+.big-Text:hover {
+  color: #61dafb;
+  scale: 1.1;
+}
+
+.small-Text {
+  font-family: 'Coda', cursive;
+  display: flex;
+  flex: 1;
+  font-size: calc(5px + 2vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered > h1 {
+  font-family: 'Coda', cursive;
+  font-size: calc(10px + 2vmin);
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.loud {
+  font-family: 'Coda', cursive;
+  color: rgb(95, 244, 255);
+  text-shadow: 0 0 10px #000;
+  scale: 1.1;
+}
+
+.normal-Text {
+  font-family: 'Coda', cursive;
+  display: flex;
+  flex: 1;
+  font-size: calc(10px + 4vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-home {
+  display: inline-flex;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: scale 0.2s ease, color 0.2s ease;
+}
+
+.white-home:hover {
+  scale: 1.1;
+  color: #61dafb;
+}
+
+.stack-container {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.aboutText {
+  font-family: 'Coda', cursive;
+  font-size: calc(10px + 4vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  margin: 0;
+}
+
+.aboutTextSmall {
+  font-family: 'Coda', cursive;
+  font-size: calc(5px + 2vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  text-align: center;
+  margin: 0;
+}
+
+.center-on-screen {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: center;
+}
+
+.center-projects {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 90%;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-text {
+  font-family: 'Coda', cursive;
+  font-size: calc(5px + 2vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  text-align: center;
+  margin: 10px;
+}
+
+.link-text {
+  font-family: 'Coda', cursive;
+  font-size: calc(5px + 3vmin);
+  color: rgb(0, 234, 255);
+  text-shadow: 0 0 10px #000;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.link-text:hover {
+  color: #61dafb;
+  scale: 1.1;
+  text-decoration: underline;
+}
+
+.icon {
+  display: inline-block;
+  margin: 4px;
+  color: #fff;
+  transition: scale 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #61dafb;
+  scale: 1.1;
+}
+
+.git-page {
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: scale 0.2s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.git-page > h1 {
+  font-family: 'Coda', cursive;
+  font-size: calc(5px + 4vmin);
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  text-align: center;
+  margin: 10px;
+}
+
+.git-page:hover {
+  color: #61dafb;
+  scale: 1.2;
+}
+
+.git-page:hover > h1 {
+  color: #61dafb;
+}
+
+.notice-me {
+  color: rgb(255, 130, 130);
+}
+
+.font-link {
+  font-family: 'Coda', cursive;
+}
+
+.git-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: calc(5px + 4vmin);
+  color: #61dafb;
+  text-shadow: 0 0 10px #000;
+  text-align: center;
+  margin: 10px;
+  scale: 1.4;
+}
