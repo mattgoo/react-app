@@ -1,12 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { faSolidHouse } from '@ng-icons/font-awesome/solid';
 import { Gallery, GalleryModule, ImageItem } from 'ng-gallery';
 import { Lightbox, LightboxModule } from 'ng-gallery/lightbox';
 import { HoverScaleDirective } from '../../shared/hover-scale.directive';
 import { revealOnEnter } from '../../shared/reveal';
+import { RouteShellComponent } from '../../shared/route-shell.component';
 
 interface GalleryPhoto {
   src: string;
@@ -19,15 +17,13 @@ const galleryId = 'matt-gallery';
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, NgIcon, GalleryModule, LightboxModule, HoverScaleDirective],
-  viewProviders: [provideIcons({ faSolidHouse })],
+  imports: [CommonModule, GalleryModule, LightboxModule, HoverScaleDirective, RouteShellComponent],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css',
 })
 export class GalleryComponent implements OnInit, AfterViewInit {
   private readonly gallery = inject(Gallery);
   private readonly lightbox = inject(Lightbox);
-  private readonly router = inject(Router);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
 
   protected readonly galleryId = galleryId;
@@ -68,9 +64,5 @@ export class GalleryComponent implements OnInit, AfterViewInit {
 
   open(index: number): void {
     this.lightbox.open(index, this.galleryId, { panelClass: 'fullscreen' });
-  }
-
-  goHome(): void {
-    this.router.navigate(['/']);
   }
 }

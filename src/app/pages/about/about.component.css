@@ -1,11 +1,105 @@
 :host {
   display: block;
-  min-height: 100vh;
-  background-color: #282c34;
 }
 
-.home-row {
+.about-wrap {
   width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.intro-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid rgba(97, 218, 251, 0.18);
+  border-radius: 6px;
+  background: rgba(13, 17, 23, 0.55);
+}
+
+.hero-line {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  font-size: clamp(0.85rem, 2.2vw, 1.25rem);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 8px rgba(97, 218, 251, 0.4);
+}
+
+.bio {
+  font-family: 'Coda', cursive;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  line-height: 1.6;
+  color: #fff;
+  margin: 0;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-label {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, monospace;
+  color: rgba(97, 218, 251, 0.85);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 12px;
+}
+
+.skill-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Coda', cursive;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.skill-cell:hover {
+  color: #61dafb;
+  border-color: rgba(97, 218, 251, 0.5);
+  background: rgba(97, 218, 251, 0.05);
+}
+
+.skill-name {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .about-wrap {
+    gap: 28px;
+  }
+  .intro-card {
+    padding: 18px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 10px;
+  }
+  .skill-cell ng-icon,
+  .skill-cell svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
 }

@@ -1,95 +1,51 @@
-<div class="stack-container">
-  <div class="home-row">
-    <button appHover type="button" class="white-home" (click)="goHome()" aria-label="Home">
-      <ng-icon name="faSolidHouse" size="32"></ng-icon>
-    </button>
-  </div>
+<app-route-shell title="ABOUT" subtitle="// who, what, with which tools">
+  <div class="about-wrap">
+    <section class="intro-card">
+      <h2 class="hero-line">Full-stack developer.</h2>
+      <p class="bio">
+        I build software for
+        <span class="loud">Edmunds GovTech</span> by day and ship side projects
+        the rest of the time — a marketing site for the family HVAC business,
+        a habit tracker (web + iOS), and a market dashboard for tracking
+        insider trades. I like animation, arcade aesthetics, and shipping the
+        boring 80% so the fun 20% gets to land.
+      </p>
+    </section>
 
-  <h1 class="aboutText">
-    <span class="loud">About Me</span>
-  </h1>
-
-  <div class="center-on-screen">
-    <div class="info-grid">
-      <div class="info-text">
-        <h1 class="aboutText">
-          I am a <span class="loud">full stack web developer</span> with a passion for
-          learning and problem solving.
-        </h1>
+    <section class="skills-section">
+      <h3 class="section-label">// using daily</h3>
+      <div class="skills-grid">
+        @for (s of daily; track s.name) {
+          <button
+            appHover
+            type="button"
+            class="skill-cell"
+            (click)="openUrl(s.url)"
+            [title]="s.name"
+          >
+            <ng-icon [name]="s.icon" size="48"></ng-icon>
+            <span class="skill-name">{{ s.name }}</span>
+          </button>
+        }
       </div>
-      <div class="info-text">
-        <h1 class="aboutText">
-          I have a background in software engineering and
-          <span class="loud">enjoy programming</span>.
-        </h1>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <h1 class="aboutTextSmall">
-    <span class="loud">Skills</span><br />
-    <span class="notice-me">(Icons Clickable)</span>
-  </h1>
-
-  <div class="center-on-screen">
-    <div class="info-grid">
-      <div class="info-text">
-        <h1 class="info-text">
-          Python - Java - Linux - Kali - Cyber Security - Windows - C - SQL - Git - Django - Adobe - and more
-          <br />
-          <span appHover class="icon" (click)="openUrl('https://www.python.org/')" title="Python">
-            <ng-icon name="faBrandPython" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.java.com/en/')" title="Java">
-            <ng-icon name="faBrandJava" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.linux.org/')" title="Linux">
-            <ng-icon name="faBrandLinux" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://tryhackme.com/p/mattgoo')" title="Try Hack Me">
-            <ng-icon name="simpleTryhackme" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.kali.org/')" title="Kali">
-            <ng-icon name="simpleKalilinux" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.microsoft.com/en-us/windows/')" title="Windows">
-            <ng-icon name="faBrandWindows" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.mysql.com/')" title="MySQL">
-            <ng-icon name="simpleMysql" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://github.com/mattgoo')" title="GitHub">
-            <ng-icon name="faBrandGithub" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.djangoproject.com/')" title="Django">
-            <ng-icon name="simpleDjango" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.adobe.com/')" title="Adobe">
-            <ng-icon name="simpleAdobe" size="70"></ng-icon>
-          </span>
-        </h1>
+    <section class="skills-section">
+      <h3 class="section-label">// also know</h3>
+      <div class="skills-grid">
+        @for (s of also; track s.name) {
+          <button
+            appHover
+            type="button"
+            class="skill-cell"
+            (click)="openUrl(s.url)"
+            [title]="s.name"
+          >
+            <ng-icon [name]="s.icon" size="48"></ng-icon>
+            <span class="skill-name">{{ s.name }}</span>
+          </button>
+        }
       </div>
-      <div class="info-text">
-        <h2 class="info-text">
-          I am currently learning React, Node, and React Native.
-          <br />
-          <span appHover class="icon" (click)="openUrl('https://reactjs.org/')" title="React">
-            <ng-icon name="faBrandReact" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://www.javascript.com/')" title="JavaScript">
-            <ng-icon name="simpleJavascript" size="70"></ng-icon>
-          </span>
-          <span appHover class="icon" (click)="openUrl('https://nodejs.org/en/')" title="Node">
-            <ng-icon name="faBrandNodeJs" size="70"></ng-icon>
-          </span>
-        </h2>
-      </div>
-    </div>
+    </section>
   </div>
-
-  <div class="center-on-screen">
-    <div appHover class="link-text" (click)="openUrl('https://tryhackme.com/p/mattgoo')">
-      <h1 class="link-text">Try Hack Me Profile</h1>
-    </div>
-  </div>
-</div>
+</app-route-shell>

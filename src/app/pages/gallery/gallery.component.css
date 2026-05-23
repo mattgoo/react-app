@@ -1,27 +1,13 @@
 :host {
   display: block;
-  min-height: 100vh;
-  background-color: #282c34;
-}
-
-.gallery-page {
-  flex-direction: column;
-  width: 100%;
-  padding: 16px;
-  box-sizing: border-box;
-  gap: 16px;
-}
-
-.home-row {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .masonry {
   column-count: 4;
-  column-gap: 12px;
+  column-gap: 16px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1100px) {
@@ -39,13 +25,20 @@
 .tile {
   display: block;
   width: 100%;
-  margin: 0 0 12px 0;
+  margin: 0 0 16px 0;
   padding: 0;
   border: 0;
   background: transparent;
   cursor: pointer;
   break-inside: avoid;
   overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.2s ease;
+}
+
+.tile:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
 }
 
 .tile img {

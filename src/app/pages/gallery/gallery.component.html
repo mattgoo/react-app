@@ -1,10 +1,4 @@
-<div class="App gallery-page">
-  <div class="home-row">
-    <button appHover type="button" class="white-home" (click)="goHome()" aria-label="Home">
-      <ng-icon name="faSolidHouse" size="32"></ng-icon>
-    </button>
-  </div>
-
+<app-route-shell title="GALLERY" subtitle="// pixel art, posters, scribbles">
   <div class="masonry">
     @for (photo of photos; track photo.src; let i = $index) {
       <button
@@ -17,8 +11,13 @@
         (click)="open(i)"
         [style.aspect-ratio]="photo.width + ' / ' + photo.height"
       >
-        <img [src]="photo.src" [alt]="'Gallery image ' + (i + 1)" loading="lazy" />
+        <img
+          [src]="photo.src"
+          [alt]="'Gallery image ' + (i + 1)"
+          loading="lazy"
+          decoding="async"
+        />
       </button>
     }
   </div>
-</div>
+</app-route-shell>

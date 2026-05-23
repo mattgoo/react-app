@@ -1,22 +1,112 @@
-<div class="stack-container">
-  <div class="home-row">
-    <button appHover type="button" class="white-home" (click)="goHome()" aria-label="Home">
-      <ng-icon name="faSolidHouse" size="32"></ng-icon>
-    </button>
-  </div>
-
-  <h1 class="git-title">Githubs</h1>
-
-  <div class="center-projects">
-    <div class="info-grid">
-      <div appHover [scale]="1.2" class="git-page" (click)="openUrl('https://github.com/mattgoo')">
-        <h1>Personal Github</h1>
-        <ng-icon name="faBrandGithub" size="140"></ng-icon>
+<app-route-shell title="PROJECTS" subtitle="// things i've built / things i'm building">
+  <div class="projects-wrap">
+    <section class="project-section">
+      <h2 class="section-label">// current</h2>
+      <div class="project-grid">
+        @for (p of current; track p.name) {
+          <article class="project-card" [class.project-card--featured]="true">
+            <header class="card-head">
+              <h3 class="card-name">{{ p.name }}</h3>
+              @if (!p.live && !p.repo && p.privateRepo) {
+                <span class="pill pill--private">
+                  <ng-icon name="faSolidLock" size="11"></ng-icon>
+                  private
+                </span>
+              } @else if (!p.live && !p.repo) {
+                <span class="pill pill--wip">wip</span>
+              }
+            </header>
+            <p class="card-blurb">{{ p.blurb }}</p>
+            <div class="chip-row">
+              @for (t of p.tech; track t) {
+                <span class="chip">{{ t }}</span>
+              }
+            </div>
+            <div class="action-row">
+              <button
+                appHover
+                type="button"
+                class="action-btn action-btn--live"
+                [disabled]="!p.live"
+                (click)="openUrl(p.live)"
+                [attr.aria-label]="'Open ' + p.name + ' live demo'"
+              >
+                <ng-icon name="faSolidArrowUpRightFromSquare" size="12"></ng-icon>
+                LIVE
+              </button>
+              <button
+                appHover
+                type="button"
+                class="action-btn action-btn--code"
+                [disabled]="!p.repo"
+                (click)="openUrl(p.repo)"
+                [attr.aria-label]="'Open ' + p.name + ' source code'"
+              >
+                <ng-icon name="faBrandGithub" size="12"></ng-icon>
+                CODE
+              </button>
+            </div>
+          </article>
+        }
       </div>
-      <div appHover [scale]="1.2" class="git-page" (click)="openUrl('https://github.com/mngoodwin')">
-        <h1>School Github</h1>
-        <ng-icon name="faBrandGithubAlt" size="140"></ng-icon>
+    </section>
+
+    <section class="project-section">
+      <h2 class="section-label">// older</h2>
+      <div class="project-grid project-grid--older">
+        @for (p of older; track p.name) {
+          <article class="project-card project-card--older">
+            <header class="card-head">
+              <h3 class="card-name card-name--small">{{ p.name }}</h3>
+            </header>
+            <p class="card-blurb card-blurb--small">{{ p.blurb }}</p>
+            <div class="action-row action-row--small">
+              <button
+                appHover
+                type="button"
+                class="action-btn action-btn--live"
+                [disabled]="!p.live"
+                (click)="openUrl(p.live)"
+              >
+                <ng-icon name="faSolidArrowUpRightFromSquare" size="11"></ng-icon>
+                LIVE
+              </button>
+              <button
+                appHover
+                type="button"
+                class="action-btn action-btn--code"
+                [disabled]="!p.repo"
+                (click)="openUrl(p.repo)"
+              >
+                <ng-icon name="faBrandGithub" size="11"></ng-icon>
+                CODE
+              </button>
+            </div>
+          </article>
+        }
       </div>
-    </div>
+    </section>
+
+    <footer class="profiles-row">
+      <span class="profile-label">github profiles:</span>
+      <button
+        appHover
+        type="button"
+        class="profile-link"
+        (click)="openUrl('https://github.com/mattgoo')"
+      >
+        <ng-icon name="faBrandGithub" size="16"></ng-icon>
+        mattgoo
+      </button>
+      <button
+        appHover
+        type="button"
+        class="profile-link"
+        (click)="openUrl('https://github.com/mngoodwin')"
+      >
+        <ng-icon name="faBrandGithub" size="16"></ng-icon>
+        mngoodwin
+      </button>
+    </footer>
   </div>
-</div>
+</app-route-shell>

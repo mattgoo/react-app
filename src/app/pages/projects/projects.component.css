@@ -1,11 +1,223 @@
 :host {
   display: block;
-  min-height: 100vh;
-  background-color: #282c34;
 }
 
-.home-row {
+.projects-wrap {
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-label {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, monospace;
+  color: rgba(97, 218, 251, 0.85);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-grid--older {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  background: rgba(13, 17, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(97, 218, 251, 0.45);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.project-card--older {
+  padding: 14px;
+  gap: 10px;
+  background: rgba(13, 17, 23, 0.4);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-name {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  font-size: 13px;
+  margin: 0;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 6px rgba(97, 218, 251, 0.35);
+}
+
+.card-name--small {
+  font-size: 11px;
+}
+
+.card-blurb {
+  font-family: 'Coda', cursive;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+  flex: 1;
+}
+
+.card-blurb--small {
+  font-size: 12.5px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  padding: 3px 7px;
+  border-radius: 3px;
+  background: rgba(97, 218, 251, 0.1);
+  color: rgba(97, 218, 251, 0.85);
+  border: 1px solid rgba(97, 218, 251, 0.18);
+}
+
+.pill {
+  font-family: source-code-pro, monospace;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.04em;
+}
+
+.pill--private {
+  background: rgba(255, 130, 130, 0.12);
+  color: rgba(255, 170, 170, 0.95);
+  border: 1px solid rgba(255, 130, 130, 0.25);
+}
+
+.pill--wip {
+  background: rgba(255, 200, 80, 0.12);
+  color: rgba(255, 210, 120, 0.95);
+  border: 1px solid rgba(255, 200, 80, 0.25);
+}
+
+.action-row {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.action-row--small {
+  gap: 6px;
+}
+
+.action-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.action-btn:hover:not(:disabled) {
+  color: #61dafb;
+  border-color: rgba(97, 218, 251, 0.55);
+  background: rgba(97, 218, 251, 0.05);
+}
+
+.action-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.profiles-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-label {
+  font-family: source-code-pro, monospace;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: 'Coda', cursive;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.profile-link:hover {
+  color: #61dafb;
+  background: rgba(97, 218, 251, 0.06);
+}
+
+@media (max-width: 600px) {
+  .projects-wrap {
+    gap: 28px;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .project-grid--older {
+    grid-template-columns: 1fr;
+  }
 }

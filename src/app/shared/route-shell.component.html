@@ -1,0 +1,29 @@
+<div class="route-shell">
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="route-header">
+    <button
+      appHover
+      type="button"
+      class="back-home"
+      (click)="goHome()"
+      aria-label="Back to home"
+    >
+      <ng-icon name="faSolidHouse" size="22"></ng-icon>
+      <span class="back-label">HOME</span>
+    </button>
+
+    <div class="route-title-block">
+      <h1 class="route-title">{{ title }}</h1>
+      @if (subtitle) {
+        <p class="route-subtitle">{{ subtitle }}</p>
+      }
+    </div>
+
+    <span class="header-spacer" aria-hidden="true"></span>
+  </header>
+
+  <main class="route-body">
+    <ng-content></ng-content>
+  </main>
+</div>
